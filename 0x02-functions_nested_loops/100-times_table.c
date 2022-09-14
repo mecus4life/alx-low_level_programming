@@ -1,4 +1,4 @@
-#include "holberton.h"
+#include "main.h"
 /**
  * print_times_table - Entry point
  * @n: input
@@ -14,5 +14,5 @@ void print_times_table(int n)
     print_times_table(98);
     _putchar('\n');
     print_times_table(12);
-    return (0);
+	return (0);
 }
