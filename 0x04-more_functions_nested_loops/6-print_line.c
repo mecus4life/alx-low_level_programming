@@ -3,7 +3,7 @@
  * Auth: Emeka
  */
 
-#include "Emeka.h"
+#include "main.h"
 
 /**
  * print_line - Draws a straight line using the character _.
