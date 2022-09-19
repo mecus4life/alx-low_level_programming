@@ -37,5 +37,5 @@ int string_length(char *pointer)
 	{
 		c++;
 	}
-	return (c);
+	return (0);
 }
