@@ -1,58 +1,34 @@
 #include "main.h"
 
 /**
- * _strlen - function that return the lenght of a string
- * @s: the string
- * Return: length of s
+ * _strncat - a function that concatenates two strings.
+ * @dest: an input string
+ * @src: an input string
+ * @n: an input integer
+ * Return: A pointer to the resulting string
  */
-
-int _strlen(char *s)
+char *_strncat(char *dest, char *src, int n)
 {
-	int i;
+	int srclen = 0, i = 0;
+	char *temp = dest, *start = src;
 
-	i = 0;
-	while (*(s + i))
-		i++;
-
-	return (i);
-}
-
-/**
- * _strncpy - function that copies the string pointed by src, included the
- * teminate null byte (\0), to the buffer pointed to by dest
- * @dest: the first parameter
- * @src: second prameter
- * @n: bytes from src that the function will use
- * Return: the pointer to dest
- */
-
-char *_strncpy(char *dest, char *src, int n)
-{
-	int ld, ls, nn;
-
-	ld = _strlen(dest);
-	ls = _strlen(src) - 1;
-
-	if (n <= 0)
-		return (dest);
-	n --;
-
-	if (n > ls)
-		n = ls;
-	while (n >= 0)
+	while (*src)
 	{
-		*(dest + n) = *(src + n);
-		n--;
+		srclen++;
+		src++;
 	}
 
-	nn = ld - n;
-	if (nn > 0)
-	{
-		while (nn > 0)
-		{
-			*(dest + ls + nn) = '\0';
-			nn--;
-		}
-	}
-	return (dest);
+	while (*dest)
+		dest++;
+
+	if (n > srclen)
+		n = srclen;
+
+	src = start;
+
+	for (; i < n; i++)
+		*dest++ = *src++;
+
+	*dest = '\0';
+	return (temp);
 }
